@@ -1,11 +1,35 @@
-# Snake Project Local Development 
-## Step 1: What the project is ? 
+# Snake Project Local Development
+
+## Table of Contents
+
+- [Step 1: What the project is ?](#step-1)
+- [Task 1:  create_default_game](#task-1)
+- [Task 2: free_game()](#task-2)
+- [Task3: print_board](#task-3)
+- [Task 4](#task-4)
+- [4.3: next square](#task-4-3)
+- [Task 4.5: update_game (2026.08.03)](#task-4-5)
+- [Task 5.1](#task-5-1)
+- [Task 5:](#task-5)
+- [Task 6 --- find_head and initialize_snakes](#task-6)
+- [Task 6.2: initialize_snakes](#task-6-2)
+- [Task 7: main](#task-7)
+- [Integration tests](#integration-tests)
+- [Notes](#final-notes)
+
+---
+
+<a id="step-1"></a>
+## Step 1: What the project is ?
 
 
-##
 
 
-### Task 1:  create_default_game
+
+---
+
+<a id="task-1"></a>
+## Task 1:  create_default_game
 Terminal: 
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make unit-tests
 gcc -c -o src/unit_tests.o src/unit_tests.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
@@ -27,7 +51,10 @@ new_game->snakes = malloc(sizeof(snake_t));
 ... ...
 
 
-### Task 2: free_game() 
+---
+
+<a id="task-2"></a>
+## Task 2: free_game()
 My implementation: 
 从大到小去free WRONG !!!
 The terminal is like: 
@@ -87,7 +114,10 @@ This test case only checks for leaks in Tasks 1 and 2. Make sure that no Valgrin
 ==1704== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 
-### Task3: print_board 
+---
+
+<a id="task-3"></a>
+## Task3: print_board
 
 Terminal: 
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make unit-tests
@@ -138,12 +168,19 @@ Google search and adjust and
 
 
 
-### Task 4 
+---
+
+<a id="task-4"></a>
+## Task 4
 4.1 : Herlper Functions 
 4.2 :
 
 ----------------------------------------------------------------------------
-4.3: next square 
+
+---
+
+<a id="task-4-3"></a>
+## 4.3: next square
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make unit-tests
 gcc -c -o src/unit_tests.o src/unit_tests.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 In file included from src/unit_tests.c:8:
@@ -211,7 +248,11 @@ Task 1: There is one requirement in the function I didn't really understand :
    Each row of the board must be terminated by a new line character + null terminator and must  be a valid string.
 
 ---------------------------------------------------------------------------------------------------
-Task 4.5: update_game (2026.08.03)
+
+---
+
+<a id="task-4-5"></a>
+## Task 4.5: update_game (2026.08.03)
 
 Run the Tests:
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ ./unit-tests
@@ -236,20 +277,20 @@ Testing update_game (Task 4)...
 Assertion error: at (row 2, col 2), expected   but got d
 test_update_game_board_1 failed. Check unit-test-in.snk, unit-test-out.snk, and unit-test-ref.snk.
 Not all update_game (Task 4) tests passed.
------------------------
+---------------------------------------------------------------------------
 Cursor Suggests: 
 make clean 
 make unit-tests
 ./unit-tests
 But it gave a hint that no such directory 
------------------------
+---------------------------------------------------------------------------
 cd /mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter
 gcc -c -o src/unit_tests.o src/unit_tests.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 gcc -c -o src/snake_utils.o src/snake_utils.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 gcc -c -o src/asserts.o src/asserts.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 gcc -o unit-tests src/snake_utils.o src/unit_tests.o src/asserts.o -Wall -Wno-unused-function -Wconversion -std=c99 -g
 ./unit-tests
------------------------
+-----------------------------------------------------------------------------
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ ./unit-tests
 Reminder: These tests are not comprehensive, and passing them does not guarantee that your implementation is working.
 
@@ -275,7 +316,11 @@ Testing read_line (Task 5)...
 test_read_line_1 failed. Check the first line of tests/01-simple-in.snk for a diagram of the line.
 Not all read_line (Task 5) tests passed.
 --------------------------Resolved-------------------------------------------------------------------
-Task 5.1 (2026.08.04)
+
+---
+
+<a id="task-5-1"></a>
+## Task 5.1
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make unit-tests
 gcc -c -o src/unit_tests.o src/unit_tests.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 In file included from src/unit_tests.c:8:
@@ -298,7 +343,7 @@ src/game.c:397:18: error: too few arguments to function ‘fgets’
 make: *** [Makefile:52: src/unit_tests.o] Error 1
   }
 }
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 AI suggested solution: to revise it 
 re-read the prompt: 
 -> read from a stream into the memory 
@@ -462,8 +507,12 @@ game_t *load_board(FILE *fp) {
 
   return game;
 }
------------------------------------------------------------------------------------------------------------
-Task 5: 
+-----------------------------------------------------------------------------
+
+---
+
+<a id="task-5"></a>
+## Task 5:
 
 My Own Solution Feedback: 
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make unit-tests
@@ -593,17 +642,29 @@ EOF 是一个宏，通常是 -1。
 如果返回 char：所有值都是 0–255，没法单独表示 EOF
 返回 int：可以用 -1 表示 EOF，0–255 表示正常字符
 ----------------------------------------------------------
-Task 6 --- find_head and initialize_snakes 
-Task 6.2: initialize_snakes 
+
+---
+
+<a id="task-6"></a>
+## Task 6 --- find_head and initialize_snakes
+
+---
+
+<a id="task-6-2"></a>
+## Task 6.2: initialize_snakes
 nested for-loops: no records about num_cols but num_rows 
 1. game->num_snakes are KNOWN 
 2. num_cols : strlen(board[i]) - 1
 
 ----------------------------------------------------------
-Task 7: main 
+
+---
+
+<a id="task-7"></a>
+## Task 7: main
 My Mistakes: call the dunctions directly ignoring the return types 
 
---------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ ./unit-tests
 Reminder: These tests are not comprehensive, and passing them does not guarantee that your implementation is working.
 
@@ -638,6 +699,12 @@ Testing initialize_snakes (Task 6)...
 All initialize_snakes (Task 6) tests passed!
 
 ----------------------------------------------------------------------------
+
+---
+
+<a id="integration-tests"></a>
+## Integration tests
+
 zy990718@ZOEZHU:/mnt/g/CSlearner/Cal_cs61c/fa25-proj1-starter$ make run-integration-tests
 gcc -c -o src/snake.o src/snake.c -Wall -Wno-unused-function -Wconversion -std=c99 -g
 gcc -o snake src/snake.o src/snake_utils.o src/game.o -Wall -Wno-unused-function -Wconversion -std=c99 -g
@@ -706,54 +773,12 @@ diff -q "tests/21-bigL-ref.snk" "tests/21-bigL-out.snk"
 Passed 21-bigL
 Passed 22-nonexistent-input-file
 -----------------------------------------------------------------------------
+
+---
+
+<a id="final-notes"></a>
+## Notes
+
 Notes: 
 1. 使用 powershell 的时候, 不需要使用 wsl 去启动 linux 环境。 
 2. 不一定非要去到 web folder 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
