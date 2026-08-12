@@ -1,6 +1,6 @@
 ﻿# DevProj
 
-Personal development projects.
+Practice projects / toy projects 
 
 ## Projects
 
