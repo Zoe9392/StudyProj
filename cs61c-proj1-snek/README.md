@@ -55,3 +55,8 @@ make run-integration-tests
 | `src/interactive_snake.c` | Terminal play mode |
 | `web/` | Browser client + 4 turn buttons |
 | `tests/` | Integration boards |
+
+### Play Game 
+<img width="1792" height="1004" alt="image" src="https://github.com/user-attachments/assets/47f27c9d-a946-4b88-84fb-ed780483c8ed" />
+
+
