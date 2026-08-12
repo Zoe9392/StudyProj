@@ -89,6 +89,10 @@ Main entry: `game2048.Main` — 4×4 board, 90% chance of spawning a 2.
     ├── Board.java
     └── ...
 ```
+## Play Game 
+<img width="2538" height="1345" alt="image" src="https://github.com/user-attachments/assets/7963310e-50cc-4fdc-976b-b832e2e01638" />
+
+
 
 ## Notes
 
