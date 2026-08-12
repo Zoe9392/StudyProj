@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>snek — web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="stage">
+      <header class="brand-block">
+        <h1 class="brand">snek</h1>
+        <p class="tagline">CS61C Project 1 — playable in the browser</p>
+      </header>
+
+      <section class="playfield" aria-label="Game board">
+        <canvas id="board" width="640" height="576" role="img" aria-label="Snake game board"></canvas>
+
+        <div class="hud">
+          <div class="stat">
+            <span class="stat-label">score</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">status</span>
+            <span class="stat-value" id="status">ready</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">speed</span>
+            <span class="stat-value" id="speed">1.0s</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="dir-pad" aria-label="Direction controls">
+        <button type="button" class="dir-btn" data-dir="up" id="btn-up">
+          <span class="dir-arrow">↑</span>
+          <span class="dir-label">Up</span>
+        </button>
+        <div class="dir-row">
+          <button type="button" class="dir-btn" data-dir="left" id="btn-left">
+            <span class="dir-arrow">←</span>
+            <span class="dir-label">Left</span>
+          </button>
+          <button type="button" class="dir-btn" data-dir="down" id="btn-down">
+            <span class="dir-arrow">↓</span>
+            <span class="dir-label">Down</span>
+          </button>
+          <button type="button" class="dir-btn" data-dir="right" id="btn-right">
+            <span class="dir-arrow">→</span>
+            <span class="dir-label">Right</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" id="btn-start" class="cta">Play</button>
+        <button type="button" id="btn-restart" class="ghost">Restart</button>
+        <p class="hint">
+          Buttons turn the snake · keyboard <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / arrows ·
+          speed <kbd>[</kbd> <kbd>]</kbd> · Space pause
+        </p>
+      </div>
+    </main>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="overlay-panel">
+        <p class="overlay-brand">snek</p>
+        <h2 id="overlay-title">Game over</h2>
+        <p id="overlay-msg">Your snake hit something.</p>
+        <button type="button" id="btn-again" class="cta">Play again</button>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
