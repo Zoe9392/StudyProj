@@ -115,10 +115,14 @@ python ok -u             # unlock locked tests
 
 Default suites: `00`–`12` and `EC` (see `proj03.ok`).
 
+## Play Game 
+<img width="1960" height="1192" alt="image" src="https://github.com/user-attachments/assets/1719adaa-8f8b-4611-a84b-3a689c50c00f" /> 
+<img width="1954" height="1183" alt="image" src="https://github.com/user-attachments/assets/005cc0fe-d32a-4cd9-a553-1e98cdc6e303" />
+
 ## Notes
 
 - Set an ant’s `implemented = True` in `ants.py` to show it in the GUI.  
 - Water places (`-w`) kill non-waterproof insects on entry; only scuba ants survive by default.  
 - Official spec: [cs61a.org/proj/ants](https://cs61a.org/proj/ants/)
 
-## Play Game 
+
