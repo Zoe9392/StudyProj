@@ -1,4 +1,4 @@
-﻿# DevProj
+﻿# Entry-level Practice 
 
 Practice projects / toy projects
 
